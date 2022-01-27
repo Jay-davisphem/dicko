@@ -1,9 +1,12 @@
 import Input from "./Input.jsx";
-const Search = () => {
+const Search = ({ search, setSearch }) => {
   return (
     <>
-      <Input />
-      <button type="submit" className="w-2/12">
+      <Input search={search} setSearch={setSearch} />
+      <button
+        type="submit"
+        className="bg-white w-1/5 text-xl text-sec-col hover:bg-txt-col hover:border-transparent border-4 border-sec-col"
+      >
         Search
       </button>
     </>

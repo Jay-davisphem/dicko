@@ -2,6 +2,7 @@ import { useState } from "react";
 import View from "./View";
 import Transition from "./Transition";
 import NavBtn from "./NavBtn";
+import bookImg from "./book.png";
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -11,7 +12,11 @@ function Nav() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <img className="h-8 w-8" src="book-open.svg" alt="Logo" />
+                <img
+                  className="h-10 w-10 md:h-12 md:w-12 text-ter-col"
+                  src={bookImg}
+                  alt="Logo"
+                />
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-10">
