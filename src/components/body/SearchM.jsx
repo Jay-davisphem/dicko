@@ -1,5 +1,5 @@
 import Input from "./Input.jsx";
-const Search = ({ search, setSearch }) => {
+const Search = ({ search, setSearch, refetch }) => {
   return (
     <>
       <Input search={search} setSearch={setSearch} />
@@ -7,6 +7,7 @@ const Search = ({ search, setSearch }) => {
         <button
           type="submit"
           className="p-1 focus:outline-none focus:shadow-outline"
+          onClick={refetch}
         >
           <svg
             fill="none"
