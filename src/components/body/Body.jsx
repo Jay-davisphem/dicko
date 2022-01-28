@@ -35,7 +35,7 @@ const Body = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-ter-col">
       {useWindowSize().width < 438 ? (
         <div className="bg-ter-col p-2">
           <h1 className="text-5xl md:text-6xl text-center md:mt-5">Dicko</h1>

@@ -1,8 +1,5 @@
+import Four from "../../../../../../Pictures/404p.jpg";
 const Error = ({ error }) => {
-  return (
-    <>
-      <h1>Error</h1>
-    </>
-  );
+  return <div className="bg-my-img"></div>;
 };
 export default Error;
