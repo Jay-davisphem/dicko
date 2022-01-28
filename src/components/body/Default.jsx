@@ -1,14 +1,7 @@
 import DisplayDict from "./DisplayDict.jsx";
 import { useEffect } from "react";
+import Loading from "./Loading.jsx";
 const Default = ({ setSearch, searchDict }) => {
-  //useEffect(() => searchDict("welcome"), []);
-
-  return (
-    <div>
-      <h1 className="text-4xl">
-        Sample Search: <strong>Welcome</strong>
-      </h1>
-    </div>
-  );
+  return <Loading use="Dummy Search" ani="" />;
 };
 export default Default;

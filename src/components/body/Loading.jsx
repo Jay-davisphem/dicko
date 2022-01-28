@@ -1,7 +1,8 @@
-const Loading = () => {
+const Loading = ({ use, ani }) => {
   return (
     <div className="min-h-screen p-8 md:p-16 w-[100%] md:w-4/5 md:m-lg bg-sec-col text-xl">
-      <div className="animate-pulse flex space-x-4">
+      {use ? <h1>{use}</h1> : ""}
+      <div className={`${ani} flex space-x-4`}>
         <div className="flex-1 space-y-6 py-1">
           <div className="h-4 bg-txt-col rounded w-1/5"></div>
           <div className="space-y-3">

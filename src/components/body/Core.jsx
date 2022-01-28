@@ -4,7 +4,7 @@ import Error from "./Error.jsx";
 import DisplayDict from "./DisplayDict.jsx";
 
 const Core = ({ setSearch, data, isLoading, isError, search, searchDict }) => {
-  if (isLoading) return <Loading />;
+  if (isLoading) return <Loading use="" ani="animate-pulse" />;
   if (isError) return <Error search={search} />;
   if (data)
     return (
