@@ -68,7 +68,7 @@ const Body = () => {
           data={data}
           setSearch={setSearch}
           isLoading={isLoading}
-          error={error}
+          search={search}
           isError={isError}
           searchDict={searchDict}
         />
