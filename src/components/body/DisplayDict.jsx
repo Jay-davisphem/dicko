@@ -1,4 +1,4 @@
-import dat from "./data.json";
+//import dat from "./data.json";
 import Loading from "./Loading.jsx";
 const DisplayDict = ({ dat, setSearch, searchDict }) => {
   console.log(dat);
@@ -38,7 +38,10 @@ const DisplayDict = ({ dat, setSearch, searchDict }) => {
                     {definitions[0].synonyms.map((li) => {
                       return (
                         <li
-                          onClick={() => searchDict(li)}
+                          onClick={() => {
+                            searchDict(li);
+                            setSearch(li);
+                          }}
                           className="hover:bg-txt-col mx-2 bg-ter-col text-sec-col mb-2 rounded-full p-1"
                         >
                           {li}
@@ -55,7 +58,10 @@ const DisplayDict = ({ dat, setSearch, searchDict }) => {
                     {definitions[0].antonyms.map((li) => {
                       return (
                         <li
-                          onClick={() => searchDict(li)}
+                          onClick={() => {
+                            searchDict(li);
+                            setSearch(li);
+                          }}
                           className="hover:bg-txt-col mx-2 bg-ter-col text-sec-col mb-2 rounded-full p-1"
                         >
                           {li}
