@@ -1,10 +1,9 @@
-//import dat from "./data.json";
+import dat from "./data.json";
 import Loading from "./Loading.jsx";
 const DisplayDict = ({ dat, setSearch, searchDict }) => {
   console.log(dat);
   const data = dat[0];
   let i = 0;
-  if (!data) return <Loading />;
   return (
     <div className="p-2 md:p-4 md:w-4/5 md:m-lg bg-sec-col text-xl">
       <div className="font-bold">{data.word}</div>

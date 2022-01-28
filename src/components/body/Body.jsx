@@ -63,14 +63,16 @@ const Body = () => {
           </form>
         </div>
       )}
-      <Core
-        data={data}
-        setSearch={setSearch}
-        isLoading={isLoading}
-        error={error}
-        isError={isError}
-        searchDict={searchDict}
-      />
+      <div className="flex md:justify-center">
+        <Core
+          data={data}
+          setSearch={setSearch}
+          isLoading={isLoading}
+          error={error}
+          isError={isError}
+          searchDict={searchDict}
+        />
+      </div>
     </main>
   );
 };

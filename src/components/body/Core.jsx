@@ -8,9 +8,7 @@ const Core = ({ setSearch, isLoading, isError, data, error, searchDict }) => {
   if (isError) return <Error error={error} />;
   if (data)
     return (
-      <div className="flex md:justify-center">
-        <DisplayDict dat={data} setSearch={setSearch} searchDict={searchDict} />
-      </div>
+      <DisplayDict dat={data} setSearch={setSearch} searchDict={searchDict} />
     );
   return <h1>Default</h1>;
 };
