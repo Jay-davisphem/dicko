@@ -1,5 +1,5 @@
 import Input from "./Input.jsx";
-const Search = ({ search, setSearch, refetch }) => {
+const Search = ({ search, setSearch, searchDict }) => {
   return (
     <>
       <Input search={search} setSearch={setSearch} />
@@ -7,7 +7,10 @@ const Search = ({ search, setSearch, refetch }) => {
         <button
           type="submit"
           className="p-1 focus:outline-none focus:shadow-outline"
-          onClick={refetch}
+          onClick={(e) => {
+            e.preventDefault();
+            searchDict(search);
+          }}
         >
           <svg
             fill="none"

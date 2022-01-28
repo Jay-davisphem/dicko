@@ -1,4 +1,5 @@
 import useWindowSize from "../../hooks/useWindowSize";
+import axios from "axios";
 import { useQuery } from "react-query";
 import { useState } from "react";
 import SearchM from "./SearchM.jsx";
@@ -6,24 +7,35 @@ import SearchD from "./SearchD.jsx";
 import Input from "./Input.jsx";
 import Core from "./Core.jsx";
 
-const searchDict = (search) => {
-  console.log(search);
-  return axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${search}`);
-};
-
 const Body = () => {
-  const [search, setSearch] = useState("");
+  const searchDict = (search) => {
+    setIsLoading(true);
+    axios
+      .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${search}`)
+      .then((res) => {
+        const data = res.data;
+        setData(data);
+        setIsLoading(false);
+        setIsError(false);
+        setError("");
+      })
+      .catch((err) => {
+        const msg = err.message;
+        setError(msg);
+        setData(null);
+        setIsError(true);
+        setIsLoading(false);
+      });
+  };
 
-  const { isLoading, data, refetch, isFetching, isError, error } = useQuery(
-    "search-words",
-    () => searchDict(search),
-    {
-      enabled: false,
-    }
-  );
+  const [search, setSearch] = useState("");
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   return (
-    <main>
+    <main className="min-h-screen">
       {useWindowSize().width < 438 ? (
         <div className="bg-ter-col p-2">
           <h1 className="text-5xl md:text-6xl text-center md:mt-5">Dicko</h1>
@@ -32,7 +44,7 @@ const Body = () => {
               <SearchM
                 search={search}
                 setSearch={setSearch}
-                refetch={refetch}
+                searchDict={searchDict}
               />
             </form>
           </div>
@@ -43,7 +55,11 @@ const Body = () => {
             Dicko
           </h1>
           <form className="flex justify-center gap-8 md:my-12 my-8 w-11/12">
-            <SearchD search={search} setSearch={setSearch} refetch={refetch} />
+            <SearchD
+              search={search}
+              setSearch={setSearch}
+              searchDict={searchDict}
+            />
           </form>
         </div>
       )}
@@ -53,7 +69,7 @@ const Body = () => {
         isLoading={isLoading}
         error={error}
         isError={isError}
-        refetch={refetch}
+        searchDict={searchDict}
       />
     </main>
   );

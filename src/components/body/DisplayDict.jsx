@@ -1,8 +1,10 @@
 //import dat from "./data.json";
-const DisplayDict = ({ dat, setSearch, refetch }) => {
+import Loading from "./Loading.jsx";
+const DisplayDict = ({ dat, setSearch, searchDict }) => {
   console.log(dat);
   const data = dat[0];
   let i = 0;
+  if (!data) return <Loading />;
   return (
     <div className="p-2 md:p-4 md:w-4/5 md:m-lg bg-sec-col text-xl">
       <div className="font-bold">{data.word}</div>
@@ -29,36 +31,41 @@ const DisplayDict = ({ dat, setSearch, refetch }) => {
               <div>
                 <b>Use</b>: {definitions[0].example}
               </div>
-              <div>
-                <ul className="flex flex-wrap">
-                  <b>Synonyms</b>:
-                  {definitions[0].synonyms.map((li) => {
-                    return (
-                      <li
-                        onClick={() => setSearch(li)}
-                        className="hover:bg-txt-col mx-2 bg-ter-col text-sec-col mb-2 rounded-full p-1"
-                      >
-                        {li}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-              <div>
-                <ul className="flex flex-wrap">
-                  <b>Antonyms</b>:
-                  {definitions[0].antonyms.map((li) => {
-                    return (
-                      <li
-                        onClick={() => setSearch(li)}
-                        className="hover:bg-txt-col mx-2 bg-ter-col text-sec-col mb-2 rounded-full p-1"
-                      >
-                        {li}
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
+
+              {definitions[0].synonyms[0] && (
+                <div>
+                  <ul className="flex flex-wrap">
+                    <b>Synonyms</b>:
+                    {definitions[0].synonyms.map((li) => {
+                      return (
+                        <li
+                          onClick={() => searchDict(li)}
+                          className="hover:bg-txt-col mx-2 bg-ter-col text-sec-col mb-2 rounded-full p-1"
+                        >
+                          {li}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
+              {definitions[0].antonyms[0] && (
+                <div>
+                  <ul className="flex flex-wrap">
+                    <b>Antonyms</b>:
+                    {definitions[0].antonyms.map((li) => {
+                      return (
+                        <li
+                          onClick={() => searchDict(li)}
+                          className="hover:bg-txt-col mx-2 bg-ter-col text-sec-col mb-2 rounded-full p-1"
+                        >
+                          {li}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              )}
               <div></div>
             </>
           );
