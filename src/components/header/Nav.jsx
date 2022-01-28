@@ -2,7 +2,7 @@ import { useState } from "react";
 import View from "./View";
 import Transition from "./Transition";
 import NavBtn from "./NavBtn";
-import bookImg from "./book.png";
+import bookImg from "../../assets/book.png";
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   return (

@@ -7,7 +7,6 @@ module.exports = {
         "sec-col": "#344055",
         "ter-col": "#729fcf",
       },
-      backgroundImage: { "my-img": "/home/davisphem/Pictures/404p.jpg" },
     },
     plugins: [],
   },
