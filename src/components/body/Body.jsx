@@ -38,7 +38,12 @@ const Body = () => {
     <main className="rounded-md min-h-screen bg-ter-col">
       {useWindowSize().width < 438 ? (
         <div className="bg-ter-col p-2">
-          <h1 className="text-5xl md:text-6xl text-center md:mt-5">Dicko</h1>
+          <a
+            href="/"
+            className="block text-5xl md:text-6xl text-center md:mt-5"
+          >
+            Dicko
+          </a>
           <div>
             <form className="flex justify-center space-x-0 md:my-12 my-8">
               <SearchM
@@ -51,9 +56,12 @@ const Body = () => {
         </div>
       ) : (
         <div className="flex justify-center items-center md:bg-ter-col">
-          <h1 className="text-5xl md:text-6xl text-center mt-4 md:mt-5 ml-24">
+          <a
+            href="/"
+            className="block text-5xl md:text-6xl text-center mt-4 md:mt-5 ml-24"
+          >
             Dicko
-          </h1>
+          </a>
           <form className="flex justify-center gap-8 md:my-12 my-8 w-11/12">
             <SearchD
               search={search}

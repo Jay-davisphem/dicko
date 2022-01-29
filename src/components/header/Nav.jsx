@@ -12,11 +12,13 @@ function Nav() {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
-                <img
-                  className="h-10 w-10 md:h-12 md:w-12 text-ter-col"
-                  src={bookImg}
-                  alt="Logo"
-                />
+                <a href="/">
+                  <img
+                    className="h-10 w-10 md:h-12 md:w-12 text-ter-col"
+                    src={bookImg}
+                    alt="Logo"
+                  />
+                </a>
               </div>
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-10">
