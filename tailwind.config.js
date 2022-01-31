@@ -7,6 +7,7 @@ module.exports = {
         "sec-col": "#344055",
         "ter-col": "#729fcf",
       },
+      fontFamily: {'font-family': ['Anonymous Pro', 'monospace']}
     },
     plugins: [],
   },
